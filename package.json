@@ -1,0 +1,29 @@
+{
+  "name": "sandboxed-issue-triage-agent",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ai-sdk/harness": "1.0.0-canary.6",
+    "@ai-sdk/harness-claude-code": "1.0.0-canary.2",
+    "@ai-sdk/harness-codex": "1.0.0-canary.2",
+    "@ai-sdk/sandbox-vercel": "1.0.0-canary.6",
+    "@vercel/sandbox": "^2.2.0",
+    "lucide-react": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  }
+}
