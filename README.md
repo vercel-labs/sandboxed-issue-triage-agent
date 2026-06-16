@@ -13,9 +13,9 @@ It creates a harness-backed session in Vercel Sandbox, streams the investigation
 
 The default form values point at this public repro repository:
 
-- https://github.com/Anshuman71/harness-triage-repro-bugs
-- Default issue: https://github.com/Anshuman71/harness-triage-repro-bugs/issues/2
-- Alternate issue: https://github.com/Anshuman71/harness-triage-repro-bugs/issues/1
+- [https://github.com/vercel-labs/harness-triage-repro-bugs](https://github.com/vercel-labs/harness-triage-repro-bugs)
+- Default issue: https://github.com/vercel-labs/harness-triage-repro-bugs/issues/2
+- Alternate issue: https://github.com/vercel-labs/harness-triage-repro-bugs/issues/1
 
 ## Why this demo exists
 
