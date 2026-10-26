@@ -1,0 +1,316 @@
+diff --git a/dist/bridge/package.json b/dist/bridge/package.json
+index c65fbaaa7a4718894640b601eeae6486b6cbb769..b66328d256c1395875a7e1b4f0fc1b2e169f9603 100644
+--- a/dist/bridge/package.json
++++ b/dist/bridge/package.json
+@@ -8,6 +8,7 @@
+     "@anthropic-ai/claude-code": "2.1.290",
+     "@modelcontextprotocol/sdk": "1.32.1",
+     "ws": "8.21.0",
+-    "zod": "4.4.3"
+-  }
++    "zod": "4.6.7"
++  },
++  "packageManager": "pnpm@10.34.5"
+ }
+diff --git a/dist/bridge/pnpm-lock.yaml b/dist/bridge/pnpm-lock.yaml
+index 719cf20d9b12324f7244c4e0d715ce6023d9e9d7..f1eaf434d61fd4dbcb883a90f7c3b128ff62ccf0 100644
+--- a/dist/bridge/pnpm-lock.yaml
++++ b/dist/bridge/pnpm-lock.yaml
+@@ -4,25 +4,31 @@ settings:
+   autoInstallPeers: true
+   excludeLinksFromLockfile: false
+ 
++overrides:
++  body-parser@2.3.0: 2.4.0
++  fast-uri@3.1.8: 3.1.9
++  hono@4.13.8: 4.13.11
++  ip-address@10.7.2: 10.7.4
++
+ importers:
+ 
+   .:
+     dependencies:
+       '@anthropic-ai/claude-agent-sdk':
+         specifier: 0.3.290
+-        version: 0.3.290(@anthropic-ai/sdk@0.97.1(zod@4.4.3))(@modelcontextprotocol/sdk@1.32.1(zod@4.4.3))(zod@4.4.3)
++        version: 0.3.290(@anthropic-ai/sdk@0.97.1(zod@4.6.7))(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(zod@4.6.7)
+       '@anthropic-ai/claude-code':
+         specifier: 2.1.290
+         version: 2.1.290
+       '@modelcontextprotocol/sdk':
+         specifier: 1.32.1
+-        version: 1.32.1(zod@4.4.3)
++        version: 1.32.1(zod@4.6.7)
+       ws:
+         specifier: 8.21.0
+         version: 8.21.0
+       zod:
+-        specifier: 4.4.3
+-        version: 4.4.3
++        specifier: 4.6.7
++        version: 4.6.7
+ 
+ packages:
+ 
+@@ -144,7 +150,7 @@ packages:
+     resolution: {integrity: sha512-ELuehkj5VCBdgEw9zs+ivkKwyzzUCSQuE96YmiPvn1ECBoZCczbFXJLeEGMTYjphP6gydh4pHMqEYPVMYUVgQg==}
+     engines: {node: '>=20'}
+     peerDependencies:
+-      hono: ^4
++      hono: 4.13.11
+ 
+   '@modelcontextprotocol/sdk@1.32.1':
+     resolution: {integrity: sha512-2DdE+SJDtzLEEWzY1ZjY7Q+VcPhcV1KisD3zI4u0XZyktsjHum1mwbMI+JaulUBi2OZk+KJAi2uPXzxichPkdw==}
+@@ -165,12 +171,17 @@ packages:
+ 
+   ajv-formats@3.0.1:
+     resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
++    peerDependencies:
++      ajv: ^8.0.0
++    peerDependenciesMeta:
++      ajv:
++        optional: true
+ 
+   ajv@8.20.0:
+     resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
+ 
+-  body-parser@2.3.0:
+-    resolution: {integrity: sha512-2cGmJupaNgg+QUwVLAucDuWuoMZ6EX9iHDRswZ5lsNYEmwPaRknMPCLZz07yTzVq/83p4o/wzbDZbBrTvGGTIw==}
++  body-parser@2.4.0:
++    resolution: {integrity: sha512-Ifk1KcLrxaGt1occQagQNFNNOqRt1LFuehEnHHzB8Z6cRgIxRU1TBaiIsUiCdA+gy5PL7Y1IX31DNKkRmxtXjQ==}
+     engines: {node: '>=18'}
+ 
+   bytes@3.1.2:
+@@ -280,8 +291,8 @@ packages:
+   fast-sha256@1.3.0:
+     resolution: {integrity: sha512-n11RGP/lrWEFI/bWdygLxhI+pVeo1ZYIVwvvPkW7azl/rOy+F3HYRZ2K5zeE9mmkhQppyv9sQFx0JM9UabnpPQ==}
+ 
+-  fast-uri@3.1.8:
+-    resolution: {integrity: sha512-GZMtZUTNRpOVIECoXwLNZS5xUGE+mVNbTB8h/7Rwh2TFWcBQiPzTgyZi05BF9UMZKkLJv8XBRJTlU7zg8+ZfMg==}
++  fast-uri@3.1.9:
++    resolution: {integrity: sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ==}
+ 
+   finalhandler@2.1.1:
+     resolution: {integrity: sha512-S8KoZgRZN+a5rNwqTxlZZePjT/4cnm0ROV70LedRHZ0p8u9fRID0hJUZQpkKLzro8LfmC8sx23bY6tVNxv8pQA==}
+@@ -318,8 +329,8 @@ packages:
+     resolution: {integrity: sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==}
+     engines: {node: '>= 0.4'}
+ 
+-  hono@4.13.8:
+-    resolution: {integrity: sha512-/Gng7NfoykZl2pjukW5Z6+8Yxm3BPRf86GTbQnt0SbySkvax4fyL4H3HhY1cCpBGmiW9XDRFzRV+CXK2W8QudQ==}
++  hono@4.13.11:
++    resolution: {integrity: sha512-/SMX/RQNJn7oNmFwH6DtwDqcrzZU2otm1FD6OJe2cWF6cfy/F8hq0XVBv7xW3FTJshRQwuBnXHDq2kNsdZnshg==}
+     engines: {node: '>=16.9.0'}
+ 
+   http-errors@2.0.1:
+@@ -333,8 +344,8 @@ packages:
+   inherits@2.0.4:
+     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+ 
+-  ip-address@10.7.2:
+-    resolution: {integrity: sha512-7H/2gFSIitxc0hG3nOI1glS8QLo/EHBFFLk8vEUjXY/xu0AdL8jZ9U1IzO2PUm0d2D/ofQcAifb0g6OBkt8U7w==}
++  ip-address@10.7.4:
++    resolution: {integrity: sha512-DWBMKyeM25D70nrIiTkgQth59/G+naKOTep6huF9j+GmeK3DMD60Zvxg5d5qQnz+38AHgou6ean2LECX+lrKDg==}
+     engines: {node: '>= 12'}
+ 
+   ipaddr.js@1.9.1:
+@@ -425,6 +436,10 @@ packages:
+     resolution: {integrity: sha512-h6fhOIaRrID2CbEY2fqs+7t+UXZo+MLAnU5gRIq85uFtdiUPCdsApMlHhXogKVM4HM2DVbIjGNTTYH2OcmP1vA==}
+     engines: {node: '>=0.6'}
+ 
++  qs@6.16.1:
++    resolution: {integrity: sha512-5Px6J7rfHBAGUhNQ3es4YzcOdBBw0SDcVtThJml4RdnKw4tKs2epA0kPZ+K8X+WiHktT93RHVcQ/3ym5aTCgtg==}
++    engines: {node: '>=0.6'}
++
+   range-parser@1.3.0:
+     resolution: {integrity: sha512-hek2mFQpPuI4E1BBKrSto+BU3e3x4xuarsbiwr3+lf7p44juvFMV0XFWQAP3xUyqXA4RrXLIoaSUGbSt056ZMw==}
+     engines: {node: '>= 0.6'}
+@@ -530,8 +545,8 @@ packages:
+     peerDependencies:
+       zod: ^3.25.28 || ^4
+ 
+-  zod@4.4.3:
+-    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
++  zod@4.6.7:
++    resolution: {integrity: sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==}
+ 
+ snapshots:
+ 
+@@ -559,11 +574,11 @@ snapshots:
+   '@anthropic-ai/claude-agent-sdk-win32-x64@0.3.290':
+     optional: true
+ 
+-  '@anthropic-ai/claude-agent-sdk@0.3.290(@anthropic-ai/sdk@0.97.1(zod@4.4.3))(@modelcontextprotocol/sdk@1.32.1(zod@4.4.3))(zod@4.4.3)':
++  '@anthropic-ai/claude-agent-sdk@0.3.290(@anthropic-ai/sdk@0.97.1(zod@4.6.7))(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(zod@4.6.7)':
+     dependencies:
+-      '@anthropic-ai/sdk': 0.97.1(zod@4.4.3)
+-      '@modelcontextprotocol/sdk': 1.32.1(zod@4.4.3)
+-      zod: 4.4.3
++      '@anthropic-ai/sdk': 0.97.1(zod@4.6.7)
++      '@modelcontextprotocol/sdk': 1.32.1(zod@4.6.7)
++      zod: 4.6.7
+     optionalDependencies:
+       '@anthropic-ai/claude-agent-sdk-darwin-arm64': 0.3.290
+       '@anthropic-ai/claude-agent-sdk-darwin-x64': 0.3.290
+@@ -609,24 +624,24 @@ snapshots:
+       '@anthropic-ai/claude-code-win32-arm64': 2.1.290
+       '@anthropic-ai/claude-code-win32-x64': 2.1.290
+ 
+-  '@anthropic-ai/sdk@0.97.1(zod@4.4.3)':
++  '@anthropic-ai/sdk@0.97.1(zod@4.6.7)':
+     dependencies:
+       json-schema-to-ts: 3.1.1
+       standardwebhooks: 1.0.0
+     optionalDependencies:
+-      zod: 4.4.3
++      zod: 4.6.7
+ 
+   '@babel/runtime@7.29.7': {}
+ 
+-  '@hono/node-server@2.1.1(hono@4.13.8)':
++  '@hono/node-server@2.1.1(hono@4.13.11)':
+     dependencies:
+-      hono: 4.13.8
++      hono: 4.13.11
+ 
+-  '@modelcontextprotocol/sdk@1.32.1(zod@4.4.3)':
++  '@modelcontextprotocol/sdk@1.32.1(zod@4.6.7)':
+     dependencies:
+-      '@hono/node-server': 2.1.1(hono@4.13.8)
++      '@hono/node-server': 2.1.1(hono@4.13.11)
+       ajv: 8.20.0
+-      ajv-formats: 3.0.1
++      ajv-formats: 3.0.1(ajv@8.20.0)
+       content-type: 1.0.5
+       cors: 2.8.6
+       cross-spawn: 7.0.6
+@@ -634,13 +649,13 @@ snapshots:
+       eventsource-parser: 3.1.1
+       express: 5.2.1
+       express-rate-limit: 8.7.0(express@5.2.1)
+-      hono: 4.13.8
++      hono: 4.13.11
+       jose: 6.2.12
+       json-schema-typed: 8.0.2
+       pkce-challenge: 5.0.1
+       raw-body: 3.0.2
+-      zod: 4.4.3
+-      zod-to-json-schema: 3.25.2(zod@4.4.3)
++      zod: 4.6.7
++      zod-to-json-schema: 3.25.2(zod@4.6.7)
+     transitivePeerDependencies:
+       - supports-color
+ 
+@@ -651,18 +666,18 @@ snapshots:
+       mime-types: 3.0.2
+       negotiator: 1.1.0
+ 
+-  ajv-formats@3.0.1:
+-    dependencies:
++  ajv-formats@3.0.1(ajv@8.20.0):
++    optionalDependencies:
+       ajv: 8.20.0
+ 
+   ajv@8.20.0:
+     dependencies:
+       fast-deep-equal: 3.1.3
+-      fast-uri: 3.1.8
++      fast-uri: 3.1.9
+       json-schema-traverse: 1.0.0
+       require-from-string: 2.0.2
+ 
+-  body-parser@2.3.0:
++  body-parser@2.4.0:
+     dependencies:
+       bytes: 3.1.2
+       content-type: 2.1.0
+@@ -670,7 +685,7 @@ snapshots:
+       http-errors: 2.0.1
+       iconv-lite: 0.7.3
+       on-finished: 2.4.1
+-      qs: 6.16.0
++      qs: 6.16.1
+       raw-body: 3.0.2
+       type-is: 2.1.0
+     transitivePeerDependencies:
+@@ -747,14 +762,14 @@ snapshots:
+     dependencies:
+       debug: 4.4.3
+       express: 5.2.1
+-      ip-address: 10.7.2
++      ip-address: 10.7.4
+     transitivePeerDependencies:
+       - supports-color
+ 
+   express@5.2.1:
+     dependencies:
+       accepts: 2.0.0
+-      body-parser: 2.3.0
++      body-parser: 2.4.0
+       content-disposition: 1.1.0
+       content-type: 1.0.5
+       cookie: 0.7.2
+@@ -788,7 +803,7 @@ snapshots:
+ 
+   fast-sha256@1.3.0: {}
+ 
+-  fast-uri@3.1.8: {}
++  fast-uri@3.1.9: {}
+ 
+   finalhandler@2.1.1:
+     dependencies:
+@@ -833,7 +848,7 @@ snapshots:
+     dependencies:
+       function-bind: 1.1.2
+ 
+-  hono@4.13.8: {}
++  hono@4.13.11: {}
+ 
+   http-errors@2.0.1:
+     dependencies:
+@@ -849,7 +864,7 @@ snapshots:
+ 
+   inherits@2.0.4: {}
+ 
+-  ip-address@10.7.2: {}
++  ip-address@10.7.4: {}
+ 
+   ipaddr.js@1.9.1: {}
+ 
+@@ -916,6 +931,11 @@ snapshots:
+       es-define-property: 1.0.1
+       side-channel: 1.1.1
+ 
++  qs@6.16.1:
++    dependencies:
++      es-define-property: 1.0.1
++      side-channel: 1.1.1
++
+   range-parser@1.3.0: {}
+ 
+   raw-body@3.0.2:
+@@ -1029,8 +1049,8 @@ snapshots:
+ 
+   ws@8.21.0: {}
+ 
+-  zod-to-json-schema@3.25.2(zod@4.4.3):
++  zod-to-json-schema@3.25.2(zod@4.6.7):
+     dependencies:
+-      zod: 4.4.3
++      zod: 4.6.7
+ 
+-  zod@4.4.3: {}
++  zod@4.6.7: {}
+diff --git a/dist/bridge/pnpm-workspace.yaml b/dist/bridge/pnpm-workspace.yaml
+index 7cdd8388ad9ce1ae4332cee76a5f90617279ecbf..23dda0cff4e35e653d1dc22a957e96fa56ff7fba 100644
+--- a/dist/bridge/pnpm-workspace.yaml
++++ b/dist/bridge/pnpm-workspace.yaml
+@@ -1,2 +1,8 @@
+ allowBuilds:
+   '@anthropic-ai/claude-code': true
++
++overrides:
++  body-parser@2.3.0: 2.4.0
++  fast-uri@3.1.8: 3.1.9
++  hono@4.13.8: 4.13.11
++  ip-address@10.7.2: 10.7.4
