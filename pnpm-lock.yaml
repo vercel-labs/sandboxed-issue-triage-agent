@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@ai-sdk/harness-claude-code@1.0.159':
+    hash: b47439795f2134acb966f353e417ac618d242eb28c9c402f6c9e22a73ce79e10
+    path: patches/@ai-sdk__harness-claude-code@1.0.159.patch
+
 importers:
 
   .:
@@ -13,7 +18,7 @@ importers:
         version: 1.0.155(ws@8.21.0)(zod@4.6.7)
       '@ai-sdk/harness-claude-code':
         specifier: 1.0.159
-        version: 1.0.159(zod@4.6.7)
+        version: 1.0.159(patch_hash=b47439795f2134acb966f353e417ac618d242eb28c9c402f6c9e22a73ce79e10)(zod@4.6.7)
       '@ai-sdk/harness-codex':
         specifier: 1.0.157
         version: 1.0.157(zod@4.6.7)
@@ -556,7 +561,7 @@ snapshots:
       '@vercel/oidc': 3.2.0
       zod: 4.6.7
 
-  '@ai-sdk/harness-claude-code@1.0.159(zod@4.6.7)':
+  '@ai-sdk/harness-claude-code@1.0.159(patch_hash=b47439795f2134acb966f353e417ac618d242eb28c9c402f6c9e22a73ce79e10)(zod@4.6.7)':
     dependencies:
       '@ai-sdk/harness': 1.0.155(ws@8.21.0)(zod@4.6.7)
       '@ai-sdk/provider': 4.0.30

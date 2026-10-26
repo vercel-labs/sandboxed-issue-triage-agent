@@ -2,3 +2,5 @@ allowBuilds:
   '@google/genai': true
   protobufjs: true
   sharp: true
+patchedDependencies:
+  '@ai-sdk/harness-claude-code@1.0.159': patches/@ai-sdk__harness-claude-code@1.0.159.patch
